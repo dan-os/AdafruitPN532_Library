@@ -2,16 +2,12 @@
 /*! 
     @file     mifareclassic_memdump.pde
     @author   Adafruit Industries
-	@license  BSD (see license.txt)
+	@license  BSD (see LICENSE)
 
     This example attempts to dump the contents of a Mifare Classic 1K card
 	
     Note that you need the baud rate to be 115200 because we need to print
 	out the data and read from the card at the same time!
-
-This is an example sketch for the Adafruit PN532 NFC/RFID breakout boards
-This library works with the Adafruit NFC breakout 
-  ----> https://www.adafruit.com/products/364
  
 Check out the links above for our tutorials and wiring diagrams 
 These chips use SPI to communicate, 4 required to interface
@@ -23,7 +19,7 @@ products from Adafruit!
 */
 /**************************************************************************/
 
-#include "Adafruit_PN532.h"
+#include "Particle_PN532.h"
 
 #ifdef SPARK_CORE
 #define SCK  (A3)
@@ -37,7 +33,7 @@ products from Adafruit!
 #define MISO (5)
 #endif
 
-Adafruit_PN532 nfc(SCK, MISO, MOSI, SS);
+Particle_PN532 nfc(SCK, MISO, MOSI, SS);
 
 void setup(void) {
   // has to be fast to dump the entire memory contents!

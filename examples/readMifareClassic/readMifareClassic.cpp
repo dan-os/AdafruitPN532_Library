@@ -2,7 +2,7 @@
 /*! 
     @file     readMifareClassic.cpp
     @author   Adafruit Industries, Paul Kourany, Technobly
-    @license  BSD (see license.txt)
+    @license  BSD (see LICENSE)
 
     This example will wait for any ISO14443A card or tag, and
     depending on the size of the UID will attempt to read from it.
@@ -18,10 +18,6 @@
    
     Note that you need the baud rate to be 115200 because we need to
     print out the data and read from the card at the same time!
-
-This is an example sketch for the Adafruit PN532 NFC/RFID breakout boards
-This library works with the Adafruit NFC breakout 
-  ----> https://www.adafruit.com/products/364
  
 Check out the links above for our tutorials and wiring diagrams 
 These chips use SPI to communicate, 4 required to interface
@@ -31,7 +27,7 @@ please support Adafruit and open-source hardware by purchasing
 products from Adafruit!
 */
 /**************************************************************************/
-#include "Adafruit_PN532.h"
+#include "Particle_PN532.h"
 
 // Uncomment for faster debugging!
 #include "spark_disable_wlan.h"
@@ -47,13 +43,13 @@ products from Adafruit!
 #define RST_PIN  (D3) // Necessary for I2C mode
 
 // IMPORTANT! CONFIGURE to use SPI or I2C mode:
-// Set PN532_MODE to PN532_SPI_MODE or PN532_I2C_MODE on line 32 of Adafruit_PN532.h
+// Set PN532_MODE to PN532_SPI_MODE or PN532_I2C_MODE on line 32 of Particle_PN532.h
 // If using SPI mode, an additional option is to set PN532_HW_SPI to 1 for hardware
-// SPI, or 0 for software SPI on line 35 of Adafruit_PN532.h
+// SPI, or 0 for software SPI on line 35 of Particle_PN532.h
 #if PN532_MODE == PN532_SPI_MODE
-  Adafruit_PN532 nfc(SCK_PIN, MISO_PIN, MOSI_PIN, SS_PIN);
+  Particle_PN532 nfc(SCK_PIN, MISO_PIN, MOSI_PIN, SS_PIN);
 #elif PN532_MODE == PN532_I2C_MODE
-  Adafruit_PN532 nfc(IRQ_PIN, RST_PIN);
+  Particle_PN532 nfc(IRQ_PIN, RST_PIN);
 #endif
 
 void setup(void) {

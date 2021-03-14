@@ -47,7 +47,7 @@ byte pn532ack[] = {0x00, 0x00, 0xFF, 0x00, 0xFF, 0x00};
 byte pn532response_firmwarevers[] = {0x00, 0xFF, 0x06, 0xFA, 0xD5, 0x03};
 
 // Uncomment these lines to enable debug output for PN532(SPI) and/or MIFARE related code
- #define PN532DEBUG
+//  #define PN532DEBUG
 // #define MIFAREDEBUG
 
 #define PN532_PACKBUFFSIZ 64

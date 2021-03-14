@@ -30,7 +30,7 @@ products from Adafruit!
 #include "Particle_PN532.h"
 
 // Uncomment for faster debugging!
-#include "spark_disable_wlan.h"
+// #include "spark_disable_wlan.h"
 
 // SPI Mode defines
 #define SCK_PIN  (A3)
